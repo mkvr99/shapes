@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="506.0" prefWidth="588.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task2.HelloController">
+   <center>
+      <Canvas fx:id="canvas" height="305.0" width="440.0" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <FlowPane prefHeight="173.0" prefWidth="588.0" BorderPane.alignment="CENTER">
+         <children>
+            <ColorPicker fx:id="colorpicker">
+               <FlowPane.margin>
+                  <Insets left="20.0" top="50.0" />
+               </FlowPane.margin>
+            </ColorPicker>
+            <Button fx:id="button_1" mnemonicParsing="false" onAction="#click" text="Прямоугольник">
+               <FlowPane.margin>
+                  <Insets left="150.0" top="50.0" />
+               </FlowPane.margin>
+            </Button>
+            <Button fx:id="button_4" mnemonicParsing="false" onAction="#click3" text="Овал">
+               <FlowPane.margin>
+                  <Insets left="10.0" top="50.0" />
+               </FlowPane.margin>
+            </Button>
+            <Button fx:id="button_2" mnemonicParsing="false" onAction="#click1" text="Перекраска">
+               <FlowPane.margin>
+                  <Insets left="10.0" top="50.0" />
+               </FlowPane.margin>
+            </Button>
+            <Button fx:id="button_3" mnemonicParsing="false" onAction="#click2" text="Треугольник">
+               <FlowPane.margin>
+                  <Insets left="300.0" top="20.0" />
+               </FlowPane.margin>
+            </Button>
+            <Button fx:id="button_5" mnemonicParsing="false" onAction="#patclick" text="Выполнить">
+               <FlowPane.margin>
+                  <Insets left="20.0" top="20.0" />
+               </FlowPane.margin>
+            </Button>
+            <Button fx:id="clear" mnemonicParsing="false" text="Очистить" onAction="#clear">
+               <FlowPane.margin>
+                  <Insets left="20.0" top="20.0" />
+               </FlowPane.margin>
+            </Button>
+         </children>
+      </FlowPane>
+   </bottom>
+   <top>
+      <FlowPane prefHeight="83.0" prefWidth="588.0" prefWrapLength="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ColorPicker fx:id="color1">
+               <FlowPane.margin>
+                  <Insets left="20.0" top="20.0" />
+               </FlowPane.margin>
+            </ColorPicker>
+            <Label text="Введите кол-во сторон">
+               <FlowPane.margin>
+                  <Insets left="100.0" top="20.0" />
+               </FlowPane.margin>
+            </Label>
+            <TextField fx:id="valuetext">
+               <FlowPane.margin>
+                  <Insets left="20.0" top="20.0" />
+               </FlowPane.margin>
+            </TextField>
+         </children>
+      </FlowPane>
+   </top>
+   <left>
+      <ListView fx:id="list" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" onMouseClicked="#addShape"/>
+   </left>
+</BorderPane>
