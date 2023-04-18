@@ -74,6 +74,8 @@ public class HelloController implements Initializable {
         list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         int a = list.getSelectionModel().getSelectedIndex();
         myShape new_fig = figs.get(a).clone();
+        new_fig.setColor(colorpicker.getValue());
+        new_fig.setColor(color1.getValue());
         new_fig.draw(gc);
     }
 
