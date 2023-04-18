@@ -98,6 +98,8 @@ public class HelloController implements Initializable {
             gc.setStroke(shape.getColor());
             gc.setFill(shape.getColor1());
             gc.setLineWidth(10);
+
+
             shape.draw(gc);
         }
     }
