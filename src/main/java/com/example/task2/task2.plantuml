@@ -2,18 +2,14 @@
 
 title __TASK2's Class Diagram__\n
 
-  namespace  {
-    namespace om.example.task2 {
+
       class com.example.task2.HelloApplication {
           {static} + main()
           + start()
       }
-    }
-  }
-  
 
-  namespace  {
-    namespace om.example.task2 {
+
+
       class com.example.task2.HelloController {
           + colorpicker : ColorPicker
           + valuetext : TextField
@@ -28,8 +24,7 @@ title __TASK2's Class Diagram__\n
           + patclick()
           # Click()
       }
-    }
-  }
+
   
 
   com.example.task2.HelloApplication -up-|> javafx.application.Application

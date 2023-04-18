@@ -43,13 +43,7 @@ public class HelloController implements Initializable {
     }
 
     public void click1(ActionEvent actionEvent) {
-//        rect.setColor(colorpicker.getValue());
-//        rect.draw(gc);
-//        circ.setColor(colorpicker.getValue());
-//        circ.draw(gc);
-        //trig.setColor(colorpicker.getValue());
-        //trig.draw(gc);
-        //System.out.println(trig.toString());
+
     }
 
     public void click2(ActionEvent actionEvent) {
