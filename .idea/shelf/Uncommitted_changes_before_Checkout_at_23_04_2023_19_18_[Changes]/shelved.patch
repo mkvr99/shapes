@@ -1,0 +1,109 @@
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># task2\r\n## second prog\r\n![image](https://user-images.githubusercontent.com/107999327/222955267-6f2ad4f3-c033-4bcc-8118-d395eb3be389.png)\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+--- a/README.md	(revision 6d478c55de0544ccdadd6a5303bc86ee0944a573)
++++ b/README.md	(date 1682265587747)
+@@ -1,3 +1,36 @@
+-# task2
+-## second prog
+-![image](https://user-images.githubusercontent.com/107999327/222955267-6f2ad4f3-c033-4bcc-8118-d395eb3be389.png)
++
++[2]:images/class.png
++
++# Абстрактный суперкласс (Task 1)
++
++---
++**Описание:**
++
++
++
++> ТРЕБУЕТСЯ НАПИСАТЬ ПРОГРАММУ, КОТОРАЯ РЕАЛИЗУЕТ СЛЕДУЮЩУЮ ИЕРАРХИЮ ДЛЯ ОТОБРАЖЕНИЯ ФИГУР И ПОЗВОЛЯЕТ ОТОБРАЗИТЬ УКАЗАННУЮ НА КНОПКЕ ПОЛЬЗОВАТЕЛЬСКОГО ИНТЕРФЕЙСА ФИГУРУ
++
++
++
++**Технологический стек**:
++* JAVA
++* JavaFX
++
++**Скриншоты**
++* Фото работы программы
++  ![image](https://user-images.githubusercontent.com/107999327/222955408-a857adde-0797-48e4-909f-96d34e7e6204.png)
++
++## Архитектура
++
++---
++**Диаграмма классов**
++
++![ФОТО][2]
++
++## Зависимости
++
++---
++Язык разработки Java.
++Для создания пользовательского интерфейса используется платформа JavaFX.
++
++## Приглашение к сотрудничеству
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"51a46961-d1da-4376-939f-066b6ecc5efd\" name=\"Changes\" comment=\"update\">\r\n      <change afterPath=\"$PROJECT_DIR$/readme.md\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/example/task2/task2.plantuml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/java.plantuml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/task2.plantuml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"last_opened_file_path\": \"G:/ProjectsIdea/task2\"\r\n  }\r\n}]]></component>\r\n  <component name=\"TaskManager\">\r\n    <servers />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 6d478c55de0544ccdadd6a5303bc86ee0944a573)
++++ b/.idea/workspace.xml	(date 1682266576160)
+@@ -5,10 +5,10 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="51a46961-d1da-4376-939f-066b6ecc5efd" name="Changes" comment="update">
+-      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/task2/task2.plantuml" afterDir="false" />
+       <change afterPath="$PROJECT_DIR$/src/main/java/java.plantuml" afterDir="false" />
+       <change afterPath="$PROJECT_DIR$/task2.plantuml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -21,10 +21,33 @@
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+   <component name="PropertiesComponent"><![CDATA[{
+   "keyToString": {
+-    "last_opened_file_path": "G:/ProjectsIdea/task2"
++    "last_opened_file_path": "G:/ProjectsIdea/task2",
++    "settings.editor.selected.configurable": "preferences.lookFeel"
+   }
+ }]]></component>
++  <component name="RunManager">
++    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
++      <option name="ALTERNATIVE_JRE_PATH" value="19" />
++      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
++      <option name="MAIN_CLASS_NAME" value="com.example.task2.HelloApplication" />
++      <module name="task2" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++  </component>
+   <component name="TaskManager">
+     <servers />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
+ </project>
+\ No newline at end of file
