@@ -1,0 +1,78 @@
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># task2\r\n## second prog\r\n![image](https://user-images.githubusercontent.com/107999327/222955267-6f2ad4f3-c033-4bcc-8118-d395eb3be389.png)\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+--- a/README.md	(revision 570d6a7269f73bf9917f4957234dcddcfa5235d6)
++++ b/README.md	(date 1682266954117)
+@@ -1,3 +1,35 @@
+-# task2
+-## second prog
+-![image](https://user-images.githubusercontent.com/107999327/222955267-6f2ad4f3-c033-4bcc-8118-d395eb3be389.png)
++[2]:images/class.png
++
++# Абстрактный суперкласс (Task 1)
++
++---
++**Описание:**
++
++
++
++> ТРЕБУЕТСЯ НАПИСАТЬ ПРОГРАММУ, КОТОРАЯ РЕАЛИЗУЕТ СЛЕДУЮЩУЮ ИЕРАРХИЮ ДЛЯ ОТОБРАЖЕНИЯ ФИГУР И ПОЗВОЛЯЕТ ОТОБРАЗИТЬ УКАЗАННУЮ НА КНОПКЕ ПОЛЬЗОВАТЕЛЬСКОГО ИНТЕРФЕЙСА ФИГУРУ
++
++
++
++**Технологический стек**:
++* JAVA
++* JavaFX
++
++**Скриншоты**
++* Фото работы программы
++  ![image](https://user-images.githubusercontent.com/107999327/222955408-a857adde-0797-48e4-909f-96d34e7e6204.png)
++
++## Архитектура
++
++---
++**Диаграмма классов**
++
++![ФОТО][2]
++
++## Зависимости
++
++---
++Язык разработки Java.
++Для создания пользовательского интерфейса используется платформа JavaFX.
++
++## Приглашение к сотрудничеству
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"51a46961-d1da-4376-939f-066b6ecc5efd\" name=\"Changes\" comment=\"update\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/README.md\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/README.md\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/task2/HelloController.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/task2/model/Factory.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/task2/model/IFactory.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/task2/model/myAngle.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/task2/model/myCircle.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/task2/model/myRect.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/task2/model/myShape.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/task2/model/myTriangle.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/module-info.class\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;last_opened_file_path&quot;: &quot;G:/ProjectsIdea/task2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Unnamed\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"19\" />\r\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.task2.HelloApplication\" />\r\n      <module name=\"task2\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"origin/array_vetka\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 5ca824149196f2b0a9176b069290ddd39ca53424)
++++ b/.idea/workspace.xml	(date 1682267322429)
+@@ -5,17 +5,7 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="51a46961-d1da-4376-939f-066b6ecc5efd" name="Changes" comment="update">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/task2/HelloController.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/task2/model/Factory.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/task2/model/IFactory.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/task2/model/myAngle.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/task2/model/myCircle.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/task2/model/myRect.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/task2/model/myShape.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/task2/model/myTriangle.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
