@@ -1,0 +1,129 @@
+Index: src/main/java/com/example/task2/HelloController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.task2;\r\n\r\nimport com.example.task2.model.*;\r\nimport javafx.beans.value.ChangeListener;\r\nimport javafx.beans.value.ObservableValue;\r\nimport javafx.collections.FXCollections;\r\nimport javafx.collections.ObservableList;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.Initializable;\r\nimport javafx.scene.canvas.Canvas;\r\nimport javafx.scene.canvas.GraphicsContext;\r\nimport javafx.scene.control.*;\r\nimport javafx.scene.input.MouseEvent;\r\n\r\nimport java.net.URL;\r\nimport java.util.ArrayList;\r\nimport java.util.ResourceBundle;\r\n\r\npublic class HelloController implements Initializable {\r\n    public ColorPicker colorpicker;\r\n    public TextField valuetext;\r\n    public ColorPicker color1;\r\n    public ListView list;\r\n    private GraphicsContext gc;\r\n    @FXML\r\n    private Label welcomeText;\r\n\r\n    myShape rect;\r\n    myShape trig;\r\n    myShape circ;\r\n\r\n    @FXML\r\n    private Canvas canvas;\r\n\r\n    public ObservableList<myShape> figs;\r\n\r\n\r\n\r\n    public void click(ActionEvent actionEvent) {\r\n        rect = new myRect(colorpicker.getValue(),150,150,250*Math.random(),300*Math.random(), color1.getValue());\r\n        rect.draw(gc);\r\n    }\r\n\r\n    public void click1(ActionEvent actionEvent) {\r\n\r\n    }\r\n\r\n    public void click2(ActionEvent actionEvent) {\r\n        trig=new myTriangle(colorpicker.getValue(),110*Math.random(),310*Math.random(), color1.getValue());\r\n        trig.draw(gc);\r\n    }\r\n\r\n    @Override\r\n    public void initialize(URL url, ResourceBundle resourceBundle) {\r\n        figs = FXCollections.observableArrayList();\r\n        figs.add(new myTriangle());\r\n        figs.add(new myAngle());\r\n        figs.add(new myCircle());\r\n        figs.add(new myRect());\r\n        list.setItems(figs);\r\n        gc = canvas.getGraphicsContext2D();\r\n\r\n    }\r\n\r\n    public void addShape(MouseEvent x) {\r\n        GraphicsContext gc = canvas.getGraphicsContext2D();\r\n        list.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);\r\n        int a = list.getSelectionModel().getSelectedIndex();\r\n        myShape new_fig = figs.get(a).clone();\r\n        new_fig.setColor(colorpicker.getValue());\r\n        new_fig.setColor(color1.getValue());\r\n        new_fig.draw(gc);\r\n    }\r\n\r\n\r\n    public void click3(ActionEvent actionEvent) {\r\n        circ=new myCircle(colorpicker.getValue(),150*Math.random(),50*Math.random(),140,140, color1.getValue());\r\n        circ.draw(gc);\r\n    }\r\n\r\n    public void patclick(ActionEvent actionEvent) {\r\n        if (valuetext.getText() == null || valuetext.getText().equals(\"\")) {\r\n            Alert alert = new Alert(Alert.AlertType.INFORMATION);\r\n            alert.setTitle(\"Предупреждение: \");\r\n            alert.setHeaderText(null);\r\n            alert.setContentText(\"Введено нечисло или число не из диапазона от 0 до 5!\");\r\n            alert.showAndWait();\r\n            return;\r\n        } else {\r\n            //int numberside = Integer.parseInt(valuetext.getText());\r\n            Factory shapefactory = new Factory();\r\n            //myShape shape = shapefactory.createshape(numberside);\r\n            myShape shape=shapefactory.creshape(valuetext.getText());\r\n            //gc.clearRect(0, 0, 305, 440);\r\n            shape.setColor(colorpicker.getValue());\r\n            shape.setColor1(color1.getValue());\r\n            gc.setStroke(shape.getColor());\r\n            gc.setFill(shape.getColor1());\r\n            gc.setLineWidth(10);\r\n\r\n\r\n            shape.draw(gc);\r\n        }\r\n    }\r\n\r\n    public void clear(ActionEvent actionEvent) {\r\n        gc.clearRect(0,0, canvas.getHeight(), canvas.getWidth());\r\n    }\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/task2/HelloController.java b/src/main/java/com/example/task2/HelloController.java
+--- a/src/main/java/com/example/task2/HelloController.java	(revision 841836aadc00117aa3bf6c293ba81a4ef3aee904)
++++ b/src/main/java/com/example/task2/HelloController.java	(date 1681808616983)
+@@ -98,8 +98,6 @@
+             gc.setStroke(shape.getColor());
+             gc.setFill(shape.getColor1());
+             gc.setLineWidth(10);
+-
+-
+             shape.draw(gc);
+         }
+     }
+Index: readme.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[1]:images/work.jpg\r\n[2]:images/class.jpg\r\n\r\n# Прототип (Task 6)\r\n\r\n---\r\n**Описание:**\r\n\r\n\r\n\r\n> Требуется написать программу, которая  отображает  выбранную пользователем фигуру (круг, треугольник, прямоугольник)  из списка в произвольном месте окна.\r\n> (положение указывается щелчком мыши по панели, предназначенной для рисования)\r\n\r\n\r\n\r\n**Технологический стек**:\r\n* JAVA\r\n* JavaFX\r\n\r\n**Скриншоты**\r\n* Фото работы программы\r\n  ![ФОТО][1]\r\n\r\n## Зависимости\r\n\r\n---\r\nЯзык разработки Java.\r\nДля создания пользовательского интерфейса используется платформа JavaFX.\r\n\r\n### Диаграмма классов\r\n\r\n---\r\n![ФОТО][2]
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/readme.md b/readme.md
+--- a/readme.md	(revision 841836aadc00117aa3bf6c293ba81a4ef3aee904)
++++ b/readme.md	(date 1682260733814)
+@@ -1,33 +1,2 @@
+-[1]:images/work.jpg
+-[2]:images/class.jpg
+-
+-# Прототип (Task 6)
+-
+----
+-**Описание:**
+-
+-
+-
+-> Требуется написать программу, которая  отображает  выбранную пользователем фигуру (круг, треугольник, прямоугольник)  из списка в произвольном месте окна.
+-> (положение указывается щелчком мыши по панели, предназначенной для рисования)
+-
+-
+-
+-**Технологический стек**:
+-* JAVA
+-* JavaFX
+-
+-**Скриншоты**
+-* Фото работы программы
+-  ![ФОТО][1]
+-
+-## Зависимости
+-
+----
+-Язык разработки Java.
+-Для создания пользовательского интерфейса используется платформа JavaFX.
+-
+-### Диаграмма классов
+-
+----
+-![ФОТО][2]
+\ No newline at end of file
++# task2
++![image](https://user-images.githubusercontent.com/107999327/222955408-a857adde-0797-48e4-909f-96d34e7e6204.png)
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"899d08c8-c1e0-4a30-b251-82034da66770\" name=\"Changes\" comment=\"update\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"CodeStyleSettingsInfer\">\r\n    <option name=\"done\" value=\"true\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"UML Class\" />\r\n        <option value=\"Class\" />\r\n        <option value=\"Interface\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <favorite-branches>\r\n      <branch-storage>\r\n        <map>\r\n          <entry type=\"LOCAL\">\r\n            <value>\r\n              <list>\r\n                <branch-info repo=\"$PROJECT_DIR$\" source=\"array_branch\" />\r\n              </list>\r\n            </value>\r\n          </entry>\r\n        </map>\r\n      </branch-storage>\r\n    </favorite-branches>\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"develop\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"210d8915-fad6-4fa2-9859-a3f91cdd9a56\" />\r\n        <option name=\"url\" value=\"https://github.com/mkvr99/task2.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"importingSettings\">\r\n      <MavenImportingSettings>\r\n        <option name=\"workspaceImportEnabled\" value=\"true\" />\r\n      </MavenImportingSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectCodeStyleSettingsMigration\">\r\n    <option name=\"version\" value=\"2\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2MMEMWHPMUByy5kPfPDpsBCkcLJ\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;G:/ProjectsIdea/task2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"G:\\ProjectsIdea\\task2\\src\\main\\java\\com\\example\\task2\\model\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"899d08c8-c1e0-4a30-b251-82034da66770\" name=\"Changes\" comment=\"\" />\r\n      <created>1677569005711</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1677569005711</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"update\">\r\n      <created>1681073382752</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681073382752</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"origin/array_branch\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"update\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"update\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 841836aadc00117aa3bf6c293ba81a4ef3aee904)
++++ b/.idea/workspace.xml	(date 1682260845492)
+@@ -4,7 +4,11 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="899d08c8-c1e0-4a30-b251-82034da66770" name="Changes" comment="update" />
++    <list default="true" id="899d08c8-c1e0-4a30-b251-82034da66770" name="Changes" comment="update">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/task2/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/task2/HelloController.java" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -70,19 +74,31 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;G:/ProjectsIdea/task2&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "DefaultPlantUmlFileTemplate": "UML Class",
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "last_opened_file_path": "G:/ProjectsIdea/task2",
++    "project.structure.last.edited": "SDKs",
++    "project.structure.proportion": "0.0",
++    "project.structure.side.proportion": "0.0",
++    "settings.editor.selected.configurable": "build.tools"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="G:\ProjectsIdea\task2\src\main\java\com\example\task2\model" />
+     </key>
++  </component>
++  <component name="RunManager">
++    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="com.example.task2.HelloApplication" />
++      <module name="task2" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
